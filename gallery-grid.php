@@ -45,101 +45,7 @@
                 <?php include "header.php"?>
                 <!-- /Header -->
                 <!-- Header Mobile -->
-                <div class="header_mobile">
-                    <div class="content_wrap">
-                        <div class="menu_button icon-menu"></div>
-                        <div class="logo">
-                            <a href="index.php">
-                                <img src="images/img/logo.png" class="logo_main" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="side_wrap">
-                        <div class="close">Close</div>
-                        <div class="panel_top">
-                            <nav class="menu_main_nav_area">
-                                <ul id="menu_main_mobile" class="menu_main_nav">
-                                    <!-- Home -->
-                                    <li class="menu-item current-menu-ancestor current-menu-parent">
-                                        <a href="index.php">Home</a>
-                                       
-                                    </li>
-                                    <!-- /Home -->
-                                    <!-- Pages -->
-                                    <li class="menu-item">
-                                        <a href="about-us.php">About Us</a>
-                                      
-                                    </li>
-                                    <!-- /Pages -->
-                                    <!-- Events -->
-                                    <li class="menu-item">
-                                        <a href="events.php">Events</a>
-                                    </li>
-                                    <!-- /Events -->
-                                    <!-- Sermons -->
-                                    <li class="menu-item ">
-                                        <a href="sermons.php">Sermons</a>
-                                     
-                                    </li>
-                                    <!-- /Sermons -->
-                                    <!-- Gallery -->
-                                    <li class="menu-item ">
-                                        <a href="gallery-grid.php">Gallery</a>
-                                    </li>
-                                    <!-- /Gallery -->
-                                    <!-- Blog -->
-                                    <li class="menu-item">
-                                        <a href="post-formats.html">Blog</a>
-                                    </li>
-                                    <!-- /Blog -->
-                                    <!-- Donate -->
-                                    <li class="donate-btn menu-item">
-                                        <a href="contacts.php">Contact Us</a>
-                                    </li>
-                                    <!-- /Donate -->
-                                </ul>
-                            </nav>
-                            <!-- Search -->
-                            <div class="search_wrap search_style_regular search_state_fixed">
-                                <div class="search_form_wrap">
-                                    <form role="search" method="get" class="search_form" action="#">
-                                        <button type="submit" class="search_submit icon-search" title="Start search"></button>
-                                        <input type="text" class="search_field" placeholder="Search" value="" name="s" />
-                                    </form>
-                                </div>
-                                <div class="search_results widget_area scheme_original">
-                                    <a class="search_results_close icon-cancel"></a>
-                                    <div class="search_results_content"></div>
-                                </div>
-                            </div>
-                            <!-- /Search -->
-                            <!-- Login -->
-                            <div class="login">
-                                <a href="#popup_login" class="popup_link popup_login_link icon-user">Login</a>
-                            </div>
-                            <!-- /Login -->
-                        </div>
-                        <!-- Socials panel -->
-                        <div class="panel_bottom">
-                            <div class="contact_socials">
-                                <div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_small">
-                                    <div class="sc_socials_item">
-                                        <a href="#" target="_blank" class="social_icons social_facebook">
-                                            <span class="icon-facebook"></span>
-                                        </a>
-                                    </div>
-                                    <div class="sc_socials_item">
-                                        <a href="#" target="_blank" class="social_icons social_twitter">
-                                            <span class="icon-twitter"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Socials panel -->
-                    </div>
-                    <div class="mask"></div>
-                </div>
+                <?php include "header-mob.php";?>
                 <!-- /Header Mobile -->
                 <!-- Breadcrumbs -->
                 <div class="top_panel_title top_panel_style_3 title_present breadcrumbs_present scheme_original">
@@ -518,7 +424,14 @@
                 <!-- Footer -->
                 <?php include "footer.php"?>
                 <!-- /Footer -->
-               
+                <div class="copyright_wrap copyright_style_text scheme_original">
+                    <div class="copyright_wrap_inner">
+                        <div class="content_wrap">
+                            <div class="copyright_text">Communication Department © <?php echo date('Y')?> All Rights Reserved <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- /Page wrap -->
         </div>

@@ -75,36 +75,40 @@
                                             <!-- /Home -->
                                             <!-- Pages -->
                                             <li class="menu-item menu-item-has-children">
-                                                <a href="About-us.php">About Us</a>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item">
-                                                        <a href="about-us.html">About Us</a>
-                                                    </li>
-                                                    <li class="menu-item menu-item-has-children">
-                                                        <a href="#">Features</a>
-                                                        <ul class="sub-menu">
-                                                            <li class="menu-item">
-                                                                <a href="typography.html">Typography</a>
-                                                            </li>
-                                                            <li class="menu-item">
-                                                                <a href="shortcodes.html">Shortcodes</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a href="page-404.html">404 Page</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a href="events-calendar.html">Events Calendar</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a href="shop.html">Shop</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a href="contacts.html">Contacts</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
+                            <a href="#">Features</a>
+                            <ul class="sub-menu">
+                            <li class="menu-item">
+                                <a href=" about-us.php">About Us</a>
+                            </li>
+                            <li class="menu-item">
+                            <a href="typography.php">History</a>
+                            
+                            </li>
+                                <!-- <li class="menu-item menu-item-has-children">
+                                    <a href="#">Features</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <a href="typography.html">Typography</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="shortcodes.html">Shortcodes</a>
+                                        </li>
+                                    </ul>
+                                </li> -->
+                                <!-- <li class="menu-item">
+                                    <a href="page-404.html">404 Page</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="events-calendar.html">Events Calendar</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="shop.html">Shop</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="contacts.html">Contacts</a>
+                                </li> -->
+                            </ul>
+                            </li>
                                             <!-- /Pages -->
                                             <!-- Events -->
                                             <li class="menu-item">
@@ -144,79 +148,7 @@
                 </header>
                 <!-- /Header -->
                 <!-- Header Mobile -->
-                <div class="header_mobile">
-                    <div class="content_wrap">
-                        <div class="menu_button icon-menu"></div>
-                        <div class="logo">
-                            <a href="index.php">
-                                <img src="images/img/logo.png" class="logo_main" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="side_wrap">
-                        <div class="close">Close</div>
-                        <div class="panel_top">
-                            <nav class="menu_main_nav_area">
-                                <ul id="menu_main_mobile" class="menu_main_nav">
-                                    <!-- Home -->
-                                    <li class="menu-item current-menu-ancestor current-menu-parent">
-                                        <a href="index.php">Home</a>
-                                    </li>
-                                    <!-- /Home -->
-                                    <!-- Pages -->
-                                    <li class="menu-item">
-                                        <a href="about-us.php">About Us</a>
-                                    </li>
-                                    <!-- /Pages -->
-                                    <!-- Events -->
-                                    <li class="menu-item">
-                                        <a href="events.php">Events</a>
-                                    </li>
-                                    <!-- /Events -->
-                                    <!-- Sermons -->
-                                    <li class="menu-item">
-                                        <a href="sermons.php">Sermons</a>
-                                    </li>
-                                    <!-- /Sermons -->
-                                    <!-- Gallery -->
-                                    <li class="menu-item ">
-                                        <a href="gallery-grid.php">Gallery</a> 
-                                    </li>
-                                    <!-- /Gallery -->
-                                    <!-- Blog -->
-                                    <li class="menu-item">
-                                        <a href="post-formats.php">Blog</a>
-                                    </li>
-                                    <!-- /Blog -->
-                                </ul>
-                            </nav>
-                            <!-- Login -->
-                            <div class="login">
-                                <a href="#popup_login" class="popup_link popup_login_link icon-user">Login</a>
-                            </div>
-                            <!-- /Login -->
-                        </div>
-                        <!-- Socials panel -->
-                        <div class="panel_bottom">
-                            <div class="contact_socials">
-                                <div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_small">
-                                    <div class="sc_socials_item">
-                                        <a href="#" target="_blank" class="social_icons social_facebook">
-                                            <span class="icon-facebook"></span>
-                                        </a>
-                                    </div>
-                                    <div class="sc_socials_item">
-                                        <a href="#" target="_blank" class="social_icons social_twitter">
-                                            <span class="icon-twitter"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Socials panel -->
-                    </div>
-                    <div class="mask"></div>
-                </div>
+                <?php include "header-mob.php";?>
                 <!-- /Header Mobile -->
                 <!-- Revolution Slider Section -->
                 <section class="slider_wrap slider_fullscreen slider_engine_revo slider_alias_newlife-church-home-1">
@@ -471,14 +403,14 @@
                                     <div class="content_wrap">
                                         <div class="columns_wrap sc_columns columns_fluid no_margins sc_columns_count_2">
                                             <div class="column-1_2 sc_column_item sc_column_item_1 odd first">
-                                                <h2 class="sc_title sc_title_regular sc_align_right">Our church mission is to ignite a passion to follow Jesus.</h2>
+                                                <h2 class="sc_title sc_title_regular sc_align_right">Practical Christianity, Human Dignity and Excellence.</h2>
                                             </div><div class="column-1_2 sc_column_item sc_column_item_2 even">
                                                 <div class="sc_section">
                                                     <div class="sc_section_inner">
                                                         <p class="tpl_light">
-                                                          “The church is the body of Christ on earth, empowered by the Holy Spirit to continue the task of reaching the lost and discipling the saved, helping them become fully devoted followers of Christ.”
+                                                          “The mission of ICGC_CM is in line with the churches overall mission of raising leaders, shaping vision and influencing society through Christ”
                                                         </p>
-                                                        <p class="tpl_light">Ephesians 4:1-16</p>
+                                                        <!-- <p class="tpl_light">Ephesians 4:1-16</p> -->
                                                     </div>
                                                 </div>
                                             </div>

@@ -80,9 +80,40 @@ echo '<header class="top_panel_wrap top_panel_style_3 scheme_original">
                         </li>
                         <!-- /Home -->
                         <!-- Pages -->
-                        <li class="menu-item">
-                            <a href="about-us.php">About Us</a>
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#">Features</a>
+                            <ul class="sub-menu">
+                            <li class="menu-item">
+                                <a href=" about-us.php">About Us</a>
+                            </li>
+                            <li class="menu-item">
+                            <a href="typography.php">History</a>
                             
+                        </li>
+                            <!-- <li class="menu-item menu-item-has-children">
+                                <a href="#">Features</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item">
+                                        <a href="typography.html">Typography</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="shortcodes.html">Shortcodes</a>
+                                    </li>
+                                </ul>
+                            </li> -->
+                            <!-- <li class="menu-item">
+                                <a href="page-404.html">404 Page</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="events-calendar.html">Events Calendar</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="shop.html">Shop</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="contacts.html">Contacts</a>
+                            </li> -->
+                        </ul>
                         </li>
                         <!-- /Pages -->
                         <!-- Events -->
