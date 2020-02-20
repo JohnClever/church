@@ -5,7 +5,7 @@
 
   } else if(isset($_POST['id'])) {
     extract($_POST);
-    $sql = "SELECT * FROM events WHERE id = $id";
+    $sql = "SELECT * FROM sermons WHERE serm_id = $id";
     $query = mysqli_query($conn, $sql);
     $data = mysqli_fetch_array($query);
 
@@ -102,7 +102,7 @@
               <div class="bgc-white p-20 bd">
                 <h6 class="c-grey-900">Add sermon</h6>
                 <div class="mT-30">
-                  <form id="form" class="editSermon">
+                  <form id="form" data="<?php echo $id;?>" class="editSermon">
 
                     <div class="form-group">
                       <label for="serm_title">Title of sermon</label>

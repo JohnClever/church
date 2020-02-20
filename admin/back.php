@@ -82,8 +82,8 @@ if(isset($_POST)) {
             extract($_POST);
 
             if($response['status'] != 'error') {
-                if(!isset($_FILES['evnt_image']) || empty($_FILES['evnt_image'])) {
-                    $sql = "UPDATE events SET evnt_name = '$evnt_name', evnt_des = '$evnt_des', evnt_date = '$evnt_date' WHERE id = $id";
+                if(!isset($_FILES['evnt_image']) || empty($_FILES['evnt_image']['name'])) {
+                    $sql = "UPDATE events SET evnt_name = '$evnt_name', evnt_des = '$evnt_des', evnt_date = '$evnt_date' WHERE evnt_id = $id";
                     $query = mysqli_query($conn, $sql);
 
                     if($query) {
@@ -111,7 +111,7 @@ if(isset($_POST)) {
                         $file_dest = '../images/'.$filename;
 
                         if(move_uploaded_file($evnt_image['tmp_name'], $file_dest)) {
-                            $sql = "UPDATE events SET evnt_name = '$evnt_name', evnt_des = '$evnt_des', evnt_date = '$evnt_date', evnt_image = '$evnt_image' WHERE id = $id";
+                            $sql = "UPDATE events SET evnt_name = '$evnt_name', evnt_des = '$evnt_des', evnt_image = '$filename' WHERE evnt_id = $id";
                             $query = mysqli_query($conn, $sql);
 
                             if($query) {
@@ -194,8 +194,104 @@ if(isset($_POST)) {
 
             break;
         
+        case 'editSermon':
+            $data = array();
+
+            foreach ($_POST as $key => $value) {
+                if(empty($value)) {
+                    $data[$key] = 'empty';
+                    $response['message'] = 'Empty Fields'; 
+                    $response['status'] = 'error';
+                }
+            }
+
+            extract($_POST);
+
+            if($response['status'] != 'error') {
+                if(!isset($_FILES['serm_audio']) || empty($_FILES['serm_audio']['name'])) {
+                    $sql = "UPDATE sermons SET serm_title = '$serm_title', serm_date = '$serm_date', serm_preacher = '$serm_preacher' WHERE serm_id = $id";
+                    $query = mysqli_query($conn, $sql);
+
+                    if($query) {
+                        $response['status'] = 'success';
+                        $response['message'] = 'Data entered successfully';
+                    } else {
+                        $response['status'] = 'error';
+                        $response['message'] = 'Opps, Couldn\'t stored data!!!';
+                    }
+
+                } else {
+                    extract($_FILES);
+
+                    $fileType = explode('/', $serm_audio['type']);
+                    $fileType = end($fileType);
+
+                    if(!in_array(strtolower($fileType), array('mp4', 'mp3', 'wav'))) {
+                        $data['evnt_image'] = 'File is invalid';
+                        $response['status'] = 'error';
+                        $response['message'] = 'Invalid file format, Please select either mp3, mp4, wav formats!!!';
+
+                    } else {
+                        $filename = uniqid('sermons').'.'.strtolower($fileType);
+                        $file_dest = '../sermons/'.$filename;
+
+                        if(move_uploaded_file($evnt_image['tmp_name'], $file_dest)) {
+                            $sql = "UPDATE sermons SET serm_title = '$serm_title', serm_date = '$serm_date', serm_preacher = '$serm_preacher', serm_audio = '$filename'";
+                            $query = mysqli_query($conn, $sql);
+
+                            if($query) {
+                                $response['status'] = 'success';
+                                $response['message'] = 'Data entered successfully';
+                            } else {
+                                $response['status'] = 'error';
+                                $response['message'] = 'Opps, Couldn\'t stored data!!!';
+                            }
+
+                        } else {
+                            $response['status'] = 'error';
+                            $response['message'] = 'Couldn\'t upload file!!!';
+                        }
+                    }
+                }
+            }
+
+            $response['data'] = $data;
+            echo json_encode($response);
+
+            break;
+        
+        case 'deleteSermon':
+            $id = $_POST['id'];
+            $sql = "DELETE FROM sermons WHERE serm_id = $id";
+            $query = mysqli_query($conn, $sql);
+
+            if($query) {
+                $response['status'] = 'success';
+                $response['message'] = 'Data deleted successfully';
+            } else {
+                $response['status'] = 'error';
+                $response['message'] = 'Opps, Couldn\'t delete data!!!';
+            }
+            echo json_encode($response);
+            break;
+        case 'deleteEvent':
+            $id = $_POST['id'];
+            $sql = "DELETE FROM events WHERE evnt_id = $id";
+            $query = mysqli_query($conn, $sql);
+
+            if($query) {
+                $response['status'] = 'success';
+                $response['message'] = 'Data deleted successfully';
+            } else {
+                $response['status'] = 'error';
+                $response['message'] = 'Opps, Couldn\'t delete data!!!';
+            }
+
+            echo json_encode($response);
+            break;
+
         default:
-           
+
             break;
     }
 

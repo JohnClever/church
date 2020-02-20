@@ -60,6 +60,7 @@
     }
   </style>
   <link href="style.css" rel="stylesheet">
+  <link href="sweetalert2.css" rel="stylesheet">
 </head>
 
 <body class="app">
@@ -95,6 +96,7 @@
                         <th>Name</th>
                         <th>Date</th>
                         <th>Description</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tfoot>
@@ -114,7 +116,7 @@
 
                         while($data = mysqli_fetch_array($query)) {
                           echo '
-                            <tr class="'.$data["evnt_id"].'">
+                            <tr>
                               <td>                   
                                 <div class="peer mR-10"><img class="w-5r bdrs-50p" src="../images/'.$data["evnt_image"].'" alt=""></div>
                               </td>
@@ -122,8 +124,8 @@
                               <td>'.$data["evnt_date"].'</td>
                               <td>'.$data["evnt_des"].'</td>
                               <td>
-                                <button class="btn btn-primary"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                  <button data="editEvent" class="btn btn-primary" value="'.$data["evnt_id"].'"><i class="fa fa-pencil"></i></button>
+                                  <button data="deleteEvent" class="btn btn-danger" value="'.$data["evnt_id"].'"><i class="fa fa-trash"></i></button>  
                               </td>
                             </tr>
                           ';
@@ -156,5 +158,10 @@
   <script type="47ea7ae42522b110868c5a89-text/javascript" src="bundle.js"></script>
   <script src="rocket-loader.min.js"
     data-cf-settings="47ea7ae42522b110868c5a89-|49" defer=""></script>
+  <script type="text/javascript" src="lib/jquery.js"></script>
+  <script type="text/javascript" src="lib/jquery.redirect.js"></script>
+  <script type="text/javascript" src="lib/sweetalert2.all.js"></script>
+  <script type="text/javascript" src="lib/back.js"></script>
+
 </body>
 </html>

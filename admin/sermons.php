@@ -60,6 +60,7 @@
     }
   </style>
   <link href="style.css" rel="stylesheet">
+  <link href="sweetalert2.css" rel="stylesheet">
 </head>
 
 <body class="app">
@@ -95,6 +96,7 @@
                         <th>Preacher</th>
                         <th>Date</th>
                         <th>Audio</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tfoot>
@@ -119,7 +121,8 @@
                               <td>'.$data["serm_preacher"].'</td>
                               <td>'.$data["serm_date"].'</td>
                               <td>
-                                <button class="btn btn-primary flaticon-edit">Edit</button>
+                                  <button data="editSermon" class="btn btn-primary" value="'.$data["serm_id"].'"><i class="fa fa-pencil"></i></button>
+                                  <button data="deleteSermon" class="btn btn-danger" value="'.$data["serm_id"].'"><i class="fa fa-trash"></i></button>  
                               </td>
                             </tr>
                           ';
@@ -152,5 +155,9 @@
   <script type="47ea7ae42522b110868c5a89-text/javascript" src="bundle.js"></script>
   <script src="rocket-loader.min.js"
     data-cf-settings="47ea7ae42522b110868c5a89-|49" defer=""></script>
+  <script type="text/javascript" src="lib/jquery.js"></script>
+  <script type="text/javascript" src="lib/jquery.redirect.js"></script>
+  <script type="text/javascript" src="lib/sweetalert2.all.js"></script>
+  <script type="text/javascript" src="lib/back.js"></script>
 </body>
 </html>

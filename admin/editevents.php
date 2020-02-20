@@ -1,11 +1,12 @@
 <?php 
+  include 'db.php';
   include 'components/components.php';
 
   if(isset($_SEESION['admin'])) {
 
   } else if(isset($_POST['id'])) {
     extract($_POST);
-    $sql = "SELECT * FROM events WHERE id = $id";
+    $sql = "SELECT * FROM events WHERE evnt_id = $id";
     $query = mysqli_query($conn, $sql);
     $data = mysqli_fetch_array($query);
 
@@ -106,7 +107,7 @@
               <div class="bgc-white p-20 bd">
                 <h6 class="c-grey-900">Edit event</h6>
                 <div class="mT-30">
-                  <form id="form" class="editEvent">
+                  <form id="form" data="<?php echo $id;?>" class="editEvent">
 
                     <div class="form-group">
                       <label for="evnt_name">Title of Events</label>
@@ -129,7 +130,7 @@
 
                     <div class="form-group">
                       <label for="evnt_des">Description of Events</label>
-                      <textarea name="evnt_des" type="text" class="form-control" rows="6" id="evnt_des" placeholder="Description of Event"><?php echo $evnt_name;?>"</textarea>
+                      <textarea name="evnt_des" type="text" class="form-control" rows="6" id="evnt_des" placeholder="Description of Event"><?php echo $evnt_name;?></textarea>
                     </div>
                     
                     <button type="submit" class="btn btn-primary">Add Event</button>
